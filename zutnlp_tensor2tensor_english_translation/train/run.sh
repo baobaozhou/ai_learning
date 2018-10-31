@@ -1,5 +1,5 @@
-t2t-trainer --registry_help
-#export CUDA_VISIBLE_DEVICES=""
+# t2t-trainer --registry_help
+# export CUDA_VISIBLE_DEVICES=""
 PROBLEM=translate_enzh_wmt32k
 MODEL=transformer
 HPARAMS=transformer_base_single_gpu
@@ -17,11 +17,13 @@ t2t-datagen \
   --problem=$PROBLEM
 
 # Train
-# *  If you run out of memory, add --hparams='batch_size=2048' or even 1024.
+# If you run out of memory, add --hparams='batch_size=2048' or even 1024.
 t2t-trainer \
   --data_dir=$DATA_DIR \
   --problem=$PROBLEM \
   --model=$MODEL \
   --hparams_set=$HPARAMS \
   --output_dir=$TRAIN_DIR \
-  --hparams='batch_size=1024'
+  --hparams='batch_size=1024' \
+  --worker_gpu=2 \
+  --train_steps=400000 # As large as possible to ensure the training effect, can be interrupted at any time
