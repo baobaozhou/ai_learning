@@ -271,7 +271,7 @@ vocabulary_fileen = 'dicten.txt'
 vocabulary_filech = 'dictch.txt'
 
 plot_histograms = plot_scatter = True
-vocab_size = 130000000
+vocab_size = 1000000
 max_num_lines = 1
 max_target_size = 2000
 max_source_size = 2000
