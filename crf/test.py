@@ -6,7 +6,7 @@
 #     n = 0
 #     while n < len(line):
 #         line[n] = line[n] + "\n"
-#         n = n + 1
+#         n = n + cpdp_data
 #     f2.writelines(line)
 #     f2.close()
 #     f1.close()
@@ -18,7 +18,7 @@ def toRow():
     f1 = open('test111.txt', "r",encoding='utf-8')
     f2 = open('data', "w",encoding='utf-8')
     line=f1.readlines()
-    # # print(line[1])
+    # # print(line[cpdp_data])
     # for line in f1.readlines():
     #     char=list(line)
     #

@@ -53,7 +53,7 @@ def get_ch_path_text(data_english, Isch=True, normalize_digits=False):
     labels = []
 
     training_dataszs = list([0])
-    # np.reshape(training_dataszs,(1,-1))
+    # np.reshape(training_dataszs,(cpdp_data,-cpdp_data))
     if len(text_files) == 0:
         print("err:no files in ", data_english)
         return labels
@@ -98,7 +98,7 @@ def fenci(training_data):
     training_ci = training_ci.split()
     # 以空格将字符串分开
     # training_ci = np.array(training_ci)
-    # training_ci = np.reshape(training_ci, [-1, ])
+    # training_ci = np.reshape(training_ci, [-cpdp_data, ])
     return training_ci
 
 
@@ -240,7 +240,7 @@ def textfile_to_idsfile(data_file_name, target_file_name, vocab,
 # 将文件批量转成ids文件
 def textdir_to_idsdir(textdir, idsdir, vocab, normalize_digits=True, Isch=True):
     text_files, filenames = getRawFileList(textdir)
-    # np.reshape(training_dataszs,(1,-1))
+    # np.reshape(training_dataszs,(cpdp_data,-cpdp_data))
     if len(text_files) == 0:
         raise ValueError("err:no files in ", data_english)
 

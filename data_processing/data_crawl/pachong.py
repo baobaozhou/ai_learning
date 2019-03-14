@@ -12,9 +12,9 @@
 #     for m in range(len(html.json()['data']['data'])):
 #         data=html.json()['data']['data'][m]['text']
 #         res=''.join(re.findall(r'[\u4e00-\u9fa5]',data))
-#         with open('C:\\Users\\墨宝宝大撒比\\Desktop\\1.txt','a')as f:
+#         with open('C:\\Users\\墨宝宝大撒比\\Desktop\\cpdp_data.txt','a')as f:
 #             f.write(res+'\n')
-#     n=n+1
+#     n=n+cpdp_data
 
 # #爬取图片
 # import os
@@ -48,7 +48,7 @@
 # def saveImgs(folder, img_addrs):
 #         for each in img_addrs:
 #                 print(each)
-#                 filename = each.split('/')[-1]
+#                 filename = each.split('/')[-cpdp_data]
 #                 with open(filename, 'wb') as f:
 #                         img = openUrl(each)
 #                         f.write(img)
@@ -81,7 +81,7 @@ def crawlProductComment(url,page):
         commentTime = i['creationTime']
         content = i['content']
         #输出商品评论关键信息
-        with open('C:\\Users\\墨宝宝大撒比\\Desktop\\1.txt', 'a')as f:
+        with open('C:\\Users\\墨宝宝大撒比\\Desktop\\cpdp_data.txt', 'a')as f:
                 f.write("用户评论内容:{}".format(content)+'\n')
         # print("商品全名:{}".format(productName))
         # print("用户评论内容:{}".format(content))
@@ -89,7 +89,7 @@ def crawlProductComment(url,page):
 for i in range(500,700):
     print("正在获取第{}页评论数据!".format(i+1))
     #小米6评论链接,通过更改page参数的值来循环读取多页评论信息
-    url = 'https://sclub.jd.com/comment/productPageComments.action?callback=fetchJSON_comment98vv15238&productId=6949475&score=0&sortType=5&page='+str(i)+'&pageSize=10&isShadowSku=0&fold=1'
+    url = 'https://sclub.jd.com/comment/productPageComments.action?callback=fetchJSON_comment98vv15238&productId=6949475&score=0&sortType=5&page='+str(i)+'&pageSize=10&isShadowSku=0&fold=cpdp_data'
     crawlProductComment(url,i)
     #设置休眠时间
     time.sleep(random.randint(31,33))

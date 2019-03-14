@@ -279,7 +279,7 @@ def _bilstm_crf_model(inputs, targets, config):
     unary_scores = tf.reshape(matricized_unary_scores, [batch_size, num_steps, target_num])
 
     # log-likelihood
-    sequence_lengths = tf.constant(np.full(batch_size, num_steps - 1, dtype=np.int32))  # shape: [batch_size], value: [T-1, T-1,...]
+    sequence_lengths = tf.constant(np.full(batch_size, num_steps - 1, dtype=np.int32))  # shape: [batch_size], value: [T-cpdp_data, T-cpdp_data,...]
     log_likelihood, transition_params = tf.contrib.crf.crf_log_likelihood(unary_scores, 
       targets, sequence_lengths)
 

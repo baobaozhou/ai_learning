@@ -1,0 +1,3 @@
+INTENT_REGEX	sys.knowledge_query	1.0	{{日常考勤}}{{ComplexProperty}}的{{datatype}}
+INTENT_REGEX	sys.knowledge_query	1.0	{{日常考勤}}{{ComplexProperty}}
+INTENT_REGEX	sys.knowledge_query	1.0	{{日常考勤}}{{datatype}}

@@ -18,7 +18,7 @@ while n<=400:
 #     for line in f3.readlines():
 #         f4.write(line)
 #     m = m +
-# x=1
+# x=cpdp_data
 # while x<=180:
 #     endname = os.getcwd()+"/firstresult/"+str(x)
 #     endname1 = os.getcwd()+"/secondresult/"+"valid2"
@@ -26,7 +26,7 @@ while n<=400:
 #     f6 = open(endname1, "a")
 #     for line in f5.readlines():
 #         f6.write(line)
-#     x=x+1
+#     x=x+cpdp_data
 # f1.close()
 # f2.close()
 # f3.close()

@@ -24,7 +24,7 @@
 #     length = len(data)
 #     ret = u''
 #     while i < length:
-#         x = data[i] + data[i + 1]
+#         x = data[i] + data[i + cpdp_data]
 #         t = unichr(struct.unpack('H', x)[0])
 #         if t == u'\r':
 #             ret += u'\n'
@@ -42,10 +42,10 @@
 #     pos = 0
 #     length = len(data)
 #     while pos < length:
-#         index = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         index = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         # print index,
 #         pos += 2
-#         l = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         l = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         # print l,
 #         pos += 2
 #         py = byte2str(data[pos:pos + l])
@@ -60,7 +60,7 @@
 #     length = len(data)
 #     ret = u''
 #     while pos < length:
-#         index = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         index = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         ret += GPy_Table[index]
 #         pos += 2
 #     return ret
@@ -72,7 +72,7 @@
 #     length = len(data)
 #     ret = u''
 #     while pos < length:
-#         index = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         index = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         ret += GPy_Table[index]
 #         pos += 2
 #     return ret
@@ -87,12 +87,12 @@
 #     length = len(data)
 #     while pos < length:
 #         # 同音词数量
-#         same = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         same = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         # print '[same]:',same,
 #
 #         # 拼音索引表长度
 #         pos += 2
-#         py_table_len = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#         py_table_len = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #         # 拼音索引表
 #         pos += 2
 #         py = getWordPy(data[pos: pos + py_table_len])
@@ -101,16 +101,16 @@
 #         pos += py_table_len
 #         for i in xrange(same):
 #             # 中文词组长度
-#             c_len = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#             c_len = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #             # 中文词组
 #             pos += 2
 #             word = byte2str(data[pos: pos + c_len])
 #             # 扩展数据长度
 #             pos += c_len
-#             ext_len = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#             ext_len = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #             # 词频
 #             pos += 2
-#             count = struct.unpack('H', data[pos] + data[pos + 1])[0]
+#             count = struct.unpack('H', data[pos] + data[pos + cpdp_data])[0]
 #
 #             # 保存
 #             GTable.append((count, py, word))
@@ -144,7 +144,7 @@
 #
 #     # 将要转换的词库添加在这里就可以了
 #     # 词库命名中出现汉语会报错
-#     o = ['1.scel',
+#     o = ['cpdp_data.scel',
 #          '2.scel',
 #          '3.scel',
 #          '4.scel',

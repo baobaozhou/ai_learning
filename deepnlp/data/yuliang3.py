@@ -26,16 +26,16 @@ import os
 #         lenth = len(char)
 #         output_data.write('-DOCSTART-'+'\n')
 #         output_data.write(char[0] +' '+'B-part'+'\n')
-#         n=1
-#         while n< lenth-1:
+#         n=cpdp_data
+#         while n< lenth-cpdp_data:
 #             output_data.write(char[n]+' '+'O'+'\n')
-#             n=n+1
+#             n=n+cpdp_data
 #     output_data.write('\n')
 #     input_data.close()
 #     output_data.close()
 # if __name__ == '__main__':
 #     n = 400
-#     counter = 1
+#     counter = cpdp_data
 #     while counter <= n:
 #         count = str(counter)
 #         path = './test/'
@@ -43,7 +43,7 @@ import os
 #         path2 = './forthresult/'
 #         output_file = path2 + count
 #         word(input_file, output_file)
-#         counter += 1
+#         counter += cpdp_data
 
 ########去掉错误的列
 # def word(input_file, output_file):
@@ -55,11 +55,11 @@ import os
 #         else:
 #             char=lines.replace('test_text_00000','z')
 #             char1=char.split(' ')
-#             del char1[1]
+#             del char1[cpdp_data]
 #             char2=char1
 #             del char2[3]
 #             char3=char2
-#             str = " ".join([char3[0],char3[1],char3[2],char3[3]])
+#             str = " ".join([char3[0],char3[cpdp_data],char3[2],char3[3]])
 #             output_data.write(str)
 #     input_data.close()
 #     output_data.close()

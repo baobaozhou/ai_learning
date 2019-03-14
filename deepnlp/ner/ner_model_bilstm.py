@@ -206,7 +206,7 @@ def _bilstm_model(inputs, targets, config):
     vocab_size = config.vocab_size
     target_num = config.target_num  # target output number
 
-    # NOTICE: Changes in TF 1.2, create LSTM layer with different variables
+    # NOTICE: Changes in TF cpdp_data.2, create LSTM layer with different variables
     # Multi-Layer Forward LSTM Cell
     cell_fw = tf.nn.rnn_cell.MultiRNNCell([tf.nn.rnn_cell.BasicLSTMCell(size) for _ in range(num_layers)])
     # Multi-Layer Backward LSTM Cell

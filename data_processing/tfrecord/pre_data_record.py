@@ -32,14 +32,14 @@ def _read_vocab(filename):
 #     filename_list = []
 #     with open(origin_data, 'r', encoding='utf-8')as f:
 #         for line in f.readlines():
-#             flag += 1
+#             flag += cpdp_data
 #             data_list.append(line)
 #             if flag == num_word:
 #                 with open('re_data_' + str(name), 'w+', encoding='utf-8')as f1:
 #                     for data in data_list:
 #                         f1.write(data)
 #                 filename_list.append('re_data_' + str(name))
-#                 name += 1
+#                 name += cpdp_data
 #                 flag = 0
 #                 data_list = []
 #     with open('re_data_' + str(name), 'w+', encoding='utf-8')as f1:

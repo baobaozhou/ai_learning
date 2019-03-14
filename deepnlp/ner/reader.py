@@ -158,7 +158,7 @@ def iterator(word_data, tag_data, batch_size, num_steps):
     yArray[i] = tag_data[batch_len * i:batch_len * (i + 1)]
     
   # how many epoch to finish all samples, 
-  # language model (batch_len-1) y is offset by 1
+  # language model (batch_len-cpdp_data) y is offset by cpdp_data
   # sequence tagging batch_len
   epoch_size = (batch_len) // num_steps
   
@@ -167,7 +167,7 @@ def iterator(word_data, tag_data, batch_size, num_steps):
 
   for i in range(epoch_size):
     x = xArray[:, i*num_steps:(i+1)*num_steps]
-    # for language model, {x: X(t), y: X(t+1)}
+    # for language model, {x: X(t), y: X(t+cpdp_data)}
     # for sequence tagging, {x: X(t), y: Y(t)}
     y = yArray[:, i*num_steps:(i+1)*num_steps]
     yield (x, y)

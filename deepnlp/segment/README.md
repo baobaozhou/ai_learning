@@ -37,7 +37,7 @@ from __future__ import unicode_literals
 
 from deepnlp import segmenter
 
-## Example 1: Base Model
+cpdp_data
 tokenizer = segmenter.load_model(name = 'zh')
 
 text = "我爱吃北京烤鸭"
